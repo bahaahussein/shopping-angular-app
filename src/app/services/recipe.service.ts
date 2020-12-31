@@ -20,18 +20,22 @@ export class RecipeService {
         return this.recipeSelected;
     }
 
+    getRecipeById(id: number): Recipe {
+        return this.recipes[id];
+    }
+
     private fillRecipes(): void {
         let ingredients = [
             new Ingredient('Mozarella cheesa', 1),
             new Ingredient('hot dog', 3),
         ];
-        let recipe = new Recipe('Pizza', 'Delicious Pizza', 'https://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg', ingredients);
+        let recipe = new Recipe(0, 'Pizza', 'Delicious Pizza', 'https://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg', ingredients);
         this.recipes.push(recipe);
         ingredients = [
             new Ingredient('Meat', 1),
             new Ingredient('Cheddar cheese', 1),
         ];
-        recipe = new Recipe('Burger', 'Awesome Burger', 'https://egypt.burgerking.me/Images/Products/BURGERS.jpg', ingredients);
+        recipe = new Recipe(1, 'Burger', 'Awesome Burger', 'https://egypt.burgerking.me/Images/Products/BURGERS.jpg', ingredients);
         this.recipes.push(recipe);
     }
 
